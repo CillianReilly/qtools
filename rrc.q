@@ -8,5 +8,5 @@ addr:`$":",first .z.x,count[.z.x]_enlist":5000"
 handle:(1 -1 async)*@[hopen;addr;{-1"Couldn't connect to ",string[y],": ",x;exit 1}[;addr]];
 r:handle cmd;if[async;handle[]]
 
-if[not async;-1 $[10=abs type r;r;.Q.s1 r]];
+if[not async;-1 $[10=abs type r;r;type[r]in 98 99h;.Q.s r;.Q.s1 r]];
 exit 0
