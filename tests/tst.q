@@ -23,6 +23,7 @@ utl.pex:{
 
 utl.loadTests:{
 	f:f where like[;"*.q"]f:key[x]except`tst.q;
+	if[not count f;.log.out"No test files found, exiting";exit 0];
 	.log.out"Loading test files found: ",", "sv string f;
 	system each"l ",/:(1_string x),/:"/",/:string f;
 	}
