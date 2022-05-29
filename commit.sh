@@ -41,7 +41,7 @@ else
 fi
 
 for i in $@;
-	do cp $DIR/$i .
+	do cp $DIR/$i $i
 done
 git diff *
 
