@@ -13,7 +13,7 @@ cfg.enc:(!). flip(
 	)
 cfg.dec:(!). reverse each(value;key)@\:cfg.enc
 
-http.get:{x"\r\n"sv("GET ",y," HTTP/1.1";"Host: ",(3+x?":")_x;z;"";"")}
+http.get:{x"\r\n"sv("GET ",y," HTTP/1.1";"Host: ",(3+s?":")_s:1_string x;z;""),enlist $[0;"";()]}
 http.post:{[url;ep;rh;req]url"\r\n"sv("POST ",ep," HTTP/1.1";"Host: ",9_string url;rh;"";req;"";"")}
 
 http.pt:{(0^4+first x ss"\r\n\r\n")_x}
