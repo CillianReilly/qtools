@@ -13,6 +13,10 @@ cfg.enc:(!). flip(
 	)
 cfg.dec:(!). reverse each(value;key)@\:cfg.enc
 
+// Deprecated by .Q.btoa in kdb+ 3.6
+enc.base64:{.Q.b6 2 sv/:00b,/:0N 6#b,{((6*1+x div 6)-x)#0b}count b:raze 0b vs/:4h$x}
+dec.base64:{`char$2 sv/:0N 8##[;b]8*div[;8]count b:raze 2_/:0b vs/:4h$.Q.b6?x}
+
 http.get:{x"\r\n"sv("GET ",y," HTTP/1.1";"Host: ",(3+s?":")_s:1_string x;z;""),enlist $[0;"";()]}
 http.post:{[url;ep;rh;req]url"\r\n"sv("POST ",ep," HTTP/1.1";"Host: ",9_string url;rh;"";req;"";"")}
 
