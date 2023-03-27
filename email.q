@@ -17,8 +17,8 @@ send:{[t;f;s;b]	// to from subject body
 	if[not"@"in f;f:"@"sv(f;DOMAIN)];
 	f:"From: ",header f;
 	s:"Subject: ",s;
-	m:"\n"sv(t;f;s;b);
-	smtp[`:sendmail][f;t;m];
+	m:"\n"sv(t;f;s,"\n";b);
+	smtp[`:sendmail][f;t;m]
 	}
 
 \d .
