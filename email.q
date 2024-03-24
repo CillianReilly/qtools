@@ -12,6 +12,7 @@ PASSWORD:""
 header:{first["@"vs x]," <",x,">"}
 send:{[t;f;s;b]	// to from subject body
 	smtp:.[.smtplib`:SMTP;(DOMAIN;PORT);{-1"Error connecting to SMTP server: ",x;`err}];if[smtp~`err;:()];
+	r:@[smtp`:starttls;[];{-1"Error starting TLS with SMTP server: ",x;`err}];if[r~`err;:()];
 	r:.[smtp`:login;(USER;PASSWORD);{-1"Error authenticating with SMTP server: ",x;`err}];if[r~`err;:()];
 	t:"To: ",header t;
 	if[not"@"in f;f:"@"sv(f;DOMAIN)];
