@@ -18,7 +18,7 @@ enc.base64:{b,#[;"="]4-mod[;4]count b:.Q.b6 2 sv/:00b,/:0N 6#b,{((6*1+x div 6)-x
 dec.base64:{`char$2 sv/:0N 8##[;b]8*div[;8]count b:raze 2_/:0b vs/:4h$.Q.b6?x:(x?"=")#x}
 
 http.get:{x"\r\n"sv("GET ",y," HTTP/1.0";"Host: ",(3+s?":")_s:1_string x;z;"";"")}
-http.post:{[url;ep;rh;req]url"\r\n"sv("POST ",ep," HTTP/1.1";"Host: ",(3+s?":")_s:1_string url;rh;"";req;"";"")}
+http.post:{[url;ep;rh;req]url"\r\n"sv("POST ",ep," HTTP/1.1";"Host: ",(3+s?":")_s:1_string url;rh;"";req)}
 
 http.pt:{(0^4+first x ss"\r\n\r\n")_x}
 http.jk:{.j.k 2{reverse min[x?"{}"]_x}/x}
