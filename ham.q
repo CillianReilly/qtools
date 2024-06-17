@@ -33,7 +33,7 @@ usage:{
 	-1"      6: check if the order of columns per partition matches that of the latest partition";
 	-1"      7: check if the column types per partition match that of the latest partition";
 	-1"      8: check if column counts are consistent across columns per partition";
-	-1"wlevel  : level of warnings, least to most intensive. default is 2";
+	-1"wlevel : level of warnings, least to most intensive. default is 2";
 	-1"      0: check if enumeration files exist in the hdb root e.g. sym";
 	-1"      1: check if all columns on disk exist in the .d file of the same partition";
 	-1"      2: check if all column attributes match those of the latest partition";
