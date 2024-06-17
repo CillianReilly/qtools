@@ -110,7 +110,6 @@ al8:{
 	c
 	}
 
-
 / -------- warnings -------- /
 
 wl0:{
@@ -225,6 +224,8 @@ ml8:{
 	.log.out"maintenance level 8: successfully padded truncated column(s)";
 	}
 
+/ -------- utilities -------- /
+
 lh:{
         .log.out"attempting to load hdb: ",x;
         @[.Q.l;`$x;{.log.err"error loading hdb: ",x;exit 1}];
@@ -321,6 +322,8 @@ init:{
 	show mr;
 	.log.out"finished running maintenance";
 	}
+
+/ -------- run -------- /
 
 if[not count .z.x;usage[];exit 1]
 init .z.x;
