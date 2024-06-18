@@ -115,7 +115,7 @@ al8:{
 wl0:{
 	.log.out"warning level 0: checking for existence of enumeration(s)...";
 	e:{distinct key each d where(type each d:.Q.V x)within 20 76}each x;
-	e:x!e where each not e in key`:.;
+	e:x!e(where not exists each hsym@)each e;
 	if[any 0<count each e;.log.err"warning level 0: enumeration(s) missing from hdb directory: ";show e];
 	e
 	}
