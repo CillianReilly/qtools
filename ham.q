@@ -104,8 +104,8 @@ al7:{
 
 al8:{
 	.log.out"analysis level 8: checking column counts per partition...";
-	c:flip each get each''paths each'x,/:'get each lastdotd each x;
-	c:x!.Q.pv where each(any 1_differ count each)each'c;
+	c:flip each paths each'x,/:'get each lastdotd each x;
+	c:x!.Q.pv where each{any 1_differ(count get@)each x}each'c;
 	if[any 0<count each c;.log.err"analysis level 8: column counts not consistent per partition(s):";show c];
 	c
 	}
@@ -305,7 +305,6 @@ init:{
 	wr:rw a;
 	show wr;
 	
-
 	if[not 2 any/count each'flip value ar;
 		.log.out"no hdb issues found during analysis";
 		exit 0
